@@ -1,0 +1,30 @@
+.logo {
+  height: 5.2rem;
+  transition: transform 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .logo {
+    height: 4.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .logo {
+    height: 4rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .logo {
+    height: 3.5rem;
+  }
+}

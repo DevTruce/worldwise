@@ -1,0 +1,49 @@
+.sidebar {
+  flex-basis: 56rem;
+  background-color: var(--color-dark--1);
+  padding: 3rem 5rem 3.5rem 5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .sidebar {
+    flex-basis: auto;
+    height: auto;
+    max-height: 40vh;
+    padding: 2rem 3rem;
+    overflow-y: auto;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 1.5rem 2rem;
+    max-height: 45vh;
+    min-height: 200px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 1rem 1.5rem;
+    max-height: 50vh;
+  }
+}

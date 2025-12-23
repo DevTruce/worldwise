@@ -1,0 +1,259 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+
+.navMenu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.navMenu a:link,
+.navMenu a:visited {
+  text-decoration: none;
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navMenu a:link::after,
+.navMenu a:visited::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brand--2);
+  transition: width 0.3s ease;
+}
+
+.navMenu a:link:hover::after,
+.navMenu a:visited:hover::after {
+  width: 100%;
+}
+
+.navMenu a:link:hover,
+.navMenu a:visited:hover {
+  color: var(--color-brand--2);
+  transform: translateY(-2px);
+}
+
+/* CSS Modules feature */
+.navMenu a:global(.active) {
+  color: var(--color-brand--2);
+}
+
+.navMenu a:global(.active)::after {
+  width: 100%;
+}
+
+a.ctaLink:link,
+a.ctaLink:visited {
+  background-color: var(--color-brand--2);
+  color: var(--color-dark--0);
+  padding: 0.8rem 2rem;
+  border-radius: 7px;
+  transition: all 0.3s ease;
+}
+
+a.ctaLink {
+  animation: fadeInUp 0.8s ease-out 0.8s both;
+  transition: all 0.3s ease;
+}
+
+a.ctaLink:link:hover,
+a.ctaLink:visited:hover {
+  color: var(--color-dark--0);
+  box-shadow: 0 1rem 2rem rgba(0, 196, 106, 0.3);
+}
+
+a.ctaLink:link::after,
+a.ctaLink:visited::after {
+  display: none;
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  position: relative;
+}
+
+.menuButton span {
+  width: 2.5rem;
+  height: 0.3rem;
+  background-color: var(--color-light--2);
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  transform-origin: 1px;
+}
+
+.menuButton:hover span {
+  background-color: var(--color-brand--2);
+}
+
+/* Close Button */
+.closeButton {
+  display: none;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  color: var(--color-light--2);
+  font-size: 4rem;
+  font-weight: 300;
+  cursor: pointer;
+  z-index: 1002;
+  line-height: 1;
+  padding: 0;
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  color: var(--color-brand--2);
+  transform: rotate(90deg) scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navMenu ul {
+    gap: 3rem;
+  }
+
+  .navMenu a:link,
+  .navMenu a:visited {
+    font-size: 1.3rem;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .menuButton {
+    display: flex;
+  }
+
+  .menuButtonHidden {
+    display: none !important;
+  }
+
+  .navMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-dark--1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+  }
+
+  .navMenuOpen {
+    transform: translateX(0);
+  }
+
+  .navMenuOpen ul {
+    animation: fadeInUp 0.5s ease-out 0.2s both;
+  }
+
+  .navMenuOpen .closeButton {
+    display: flex;
+  }
+
+  .navMenu ul {
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    padding: 0 2rem;
+    align-items: center;
+  }
+
+  .navMenu a:link,
+  .navMenu a:visited {
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 1.2rem 2rem;
+    font-size: 1.8rem;
+    display: inline-block;
+    width: auto;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .menuButton {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .menuButton span {
+    width: 2rem;
+    height: 0.25rem;
+  }
+
+  .closeButton {
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .navMenu ul {
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .navMenu a:link,
+  .navMenu a:visited {
+    font-size: 1.6rem;
+  }
+
+  a.ctaLink:link,
+  a.ctaLink:visited {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+  }
+}

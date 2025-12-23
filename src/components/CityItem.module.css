@@ -1,0 +1,177 @@
+.cityItem,
+.cityItem:link,
+.cityItem:visited {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+
+  background-color: var(--color-dark--2);
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  border-left: 5px solid var(--color-brand--2);
+  cursor: pointer;
+
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  animation: slideInLeft 0.4s ease-out both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.cityItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.cityItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.cityItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.cityItem:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.cityItem:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.cityItem--active {
+  border: 2px solid var(--color-brand--2);
+  border-left: 5px solid var(--color-brand--2);
+  transform: translateX(5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 196, 106, 0.2);
+}
+
+.cityItem:hover,
+.cityItem:link:hover,
+.cityItem:visited:hover {
+  transform: translateX(5px);
+  background-color: var(--color-dark--1);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.name {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-right: auto;
+}
+
+.date {
+  font-size: 1.5rem;
+}
+
+.deleteBtn {
+  height: 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-dark--1);
+  color: var(--color-light--2);
+  font-size: 1.6rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-brand--1);
+  color: var(--color-dark--1);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 0.3rem 0.8rem rgba(255, 181, 69, 0.3);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cityItem,
+  .cityItem:link,
+  .cityItem:visited {
+    gap: 1.2rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .emoji {
+    font-size: 2.2rem;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .date {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cityItem,
+  .cityItem:link,
+  .cityItem:visited {
+    gap: 1rem;
+    padding: 0.8rem 1.2rem;
+    border-left-width: 4px;
+  }
+
+  .emoji {
+    font-size: 2rem;
+  }
+
+  .name {
+    font-size: 1.4rem;
+  }
+
+  .date {
+    font-size: 1.2rem;
+  }
+
+  .deleteBtn {
+    height: 1.8rem;
+    font-size: 1.4rem;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .cityItem,
+  .cityItem:link,
+  .cityItem:visited {
+    gap: 0.8rem;
+    padding: 0.6rem 1rem;
+    border-left-width: 3px;
+  }
+
+  .emoji {
+    font-size: 1.8rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .date {
+    font-size: 1.1rem;
+  }
+
+  .deleteBtn {
+    height: 1.6rem;
+    font-size: 1.2rem;
+  }
+}

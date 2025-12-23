@@ -1,0 +1,35 @@
+.app {
+  height: calc(100vh - 8rem);
+  min-height: 0;
+  padding: 2.4rem;
+  overscroll-behavior-y: none;
+  display: flex;
+  position: relative;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem;
+    height: calc(100vh - 7rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .app {
+    padding: 1rem;
+    height: calc(100vh - 7rem);
+    overflow: hidden;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .app {
+    padding: 0.5rem;
+    height: calc(100vh - 6rem);
+  }
+}
